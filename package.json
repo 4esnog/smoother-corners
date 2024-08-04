@@ -1,0 +1,41 @@
+{
+  "name": "smoother-corners",
+  "version": "0.0.1",
+  "description": "",
+  "main": "worklet.js",
+  "scripts": {
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc",
+    "start:dev": "http-server ./ -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4esnog/smoother-corners.git"
+  },
+  "keywords": [
+    "css",
+    "houdini",
+    "paint",
+    "corners",
+    "smooth",
+    "smoother"
+  ],
+  "author": "Nikita Chesnokov <4esnog96@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/4esnog/smoother-corners/issues"
+  },
+  "homepage": "https://github.com/4esnog/smoother-corners#readme",
+  "devDependencies": {
+    "@eslint/js": "9.8.0",
+    "@types/eslint__js": "8.42.3",
+    "eslint": "9.8.0",
+    "http-server": "^14.1.1",
+    "prettier": "3.3.3",
+    "typescript": "5.5.4",
+    "typescript-eslint": "8.0.0"
+  }
+}

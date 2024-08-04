@@ -1,0 +1,12 @@
+{
+  "files": ["src/worklet.ts"],
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "module": "Preserve",
+    "outDir": "dist",
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "strict": true
+  }
+}

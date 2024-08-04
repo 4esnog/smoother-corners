@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smoother corners demo</title>
+    <style>
+      :root {
+        --bg: #ebf5ee;
+        --block-bg: #fff;
+        --accent: #e5446d;
+        --border: #706c61;
+        --main-text: #2a2b2a;
+      }
+
+      body {
+        accent-color: var(--accent);
+        background-color: var(--bg);
+        color: var(--main-text);
+      }
+
+      #test {
+        height: 100px;
+        width: 100px;
+        padding: 8px;
+        background-color: var(--block-bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+
+        --smooth-corners: 4;
+        mask-image: paint(smoother-corners);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="test">Text</div>
+    <script>
+      if (CSS && "paintWorklet" in CSS) {
+        CSS.paintWorklet.addModule("dist/worklet.js");
+      }
+    </script>
+  </body>
+</html>
