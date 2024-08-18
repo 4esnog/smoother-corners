@@ -442,6 +442,13 @@ declare const DOMPointReadOnly: {
 };
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
+  namespace CSS {
+    const paintWorklet: {
+      addModule: (path: string) => void;
+    };
+  }
+
   interface PaintRenderingContext2DSettings {
     alpha?: boolean;
   }
@@ -468,12 +475,20 @@ declare global {
     readonly height: number;
   }
 
-  type StyleMap = Map<string, unknown>;
+  interface CSSUnparsedValue {
+    readonly length: number;
+    toString(): string;
+  }
+
+  interface StyleMap<K = string> extends Map<K, CSSUnparsedValue> {
+    get(key: K): CSSUnparsedValue;
+  }
 
   type ArgsList = unknown[];
 
   abstract class Paint<
-    TStyleMap extends StyleMap = StyleMap,
+    TPropsKeys extends string = string,
+    TStyleMap extends StyleMap<TPropsKeys> = StyleMap<TPropsKeys>,
     TArgsList extends ArgsList = ArgsList,
   > {
     static get inputProperties(): string[] | undefined;

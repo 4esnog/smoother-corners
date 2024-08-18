@@ -1,0 +1,29 @@
+:root {
+  --bg: #ebf5ee;
+  --block-bg: #fff;
+  --accent: #e5446d;
+  --border: #706c61;
+  --main-text: #2a2b2a;
+}
+
+body {
+  accent-color: var(--accent);
+  background-color: var(--bg);
+  color: var(--main-text);
+}
+
+#test {
+  height: 100px;
+  width: 100px;
+  padding: 8px;
+  background-color: var(--block-bg);
+  --border-width: 1;
+  --border-color: var(--border);
+  --smooth-corners: 5;
+  /* TODO: Replace single --smooth-corners with radius + smoothing combination */
+  /* --border-radius: X; */
+  /* --corner-smoothing: X; */
+  mask-image: paint(smoother-corners);
+  background-image: paint(smoother-border);
+  background-repeat: no-repeat;
+}
